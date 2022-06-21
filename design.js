@@ -3,6 +3,8 @@ const gridHeight = document.getElementById('gridHeight');
 const gridWidth = document.getElementById('gridWidth');
 const colorPicker = document.getElementById('colorPicker');
 const clearButton = document.getElementById('clearButton');
+const paintMode = document.getElementById('paintMode');
+
 const defaultCanvasColor = '#ffffff';
 const canvasWidth = 500; // in pixel
 let pixelBoxWidthHeight = 20; // size of 
@@ -13,6 +15,7 @@ const minWidth = 0;
 const maxHeight = 50;
 const minHeight = 0;
 let color = colorPicker.value;
+let currentPaintMode = "Draw";
 
 gridHeight.value = gridHeightValue;
 gridWidth.value = gridWidthValue;
@@ -102,7 +105,10 @@ clearButton.addEventListener('click', (e) => {
     }
 });
 
-// paint on the canvas
+// paint or erase on the canvas
 canvas.addEventListener('click', (e) => {
-    e.target.style.backgroundColor = color;
+    if(paintMode.value == "Draw")
+        e.target.style.backgroundColor = color;
+    else
+        e.target.style.backgroundColor = defaultCanvasColor;
 });

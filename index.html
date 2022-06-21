@@ -24,9 +24,14 @@
                 </form>
                 <span id="error-box"></span>
 
-                <h3>Choose Color:</h3>
                 <form>
-                    <input type="color" id="colorPicker">
+                    <label for="colorPicker">Choose Color: </label>
+                    <input type="color" id="colorPicker" name="colorPicker"><br><br>
+                    <label for="paintMode">Paint Mode: </label>
+                    <select name="paintMode" id="paintMode">
+                        <option value="Draw">Draw</option>
+                        <option value="Erase">Erase</option>
+                    </select>
                 </form>
             </div>
             <div id="canvas" class="center-box">                
